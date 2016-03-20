@@ -8,28 +8,36 @@ $(function(){
     var snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}];
     var data = {'0_0':true,'0_1':true,'0_2':true};
     var cw = $(window).width();
-    if(cw<=450){
-        $(document).swipeLeft(function(){
+    console.log(cw)
+    var fangxiang = 39;
+    if(cw<=768){
+        touch.on(document, 'touchstart', function(ev){
+            ev.preventDefault();
+        });
+
+        var target = document.getElementById("sence");
+
+        touch.on(document, 'swipeleft', function(){
             fangxiang = 37;
-        })
-        $(document).swipeRight(function(){
+        });
+        touch.on(document, 'swiperight', function(){
             fangxiang = 39;
-        })
-        $(document).swipeTop(function(){
+        });
+        touch.on(document, 'swipeup', function(){
             fangxiang = 38;
-        })
-        $(document).swipeBottom(function(){
+        });
+        touch.on(document, 'swipedown', function(){
             fangxiang = 40;
-        })
-        start.tap(function(){
+        });
+        touch.on(start, 'tap', function(ev){
             aa();
         });
-        stop.tap(function(){
+        touch.on(stop, 'tap', function(ev){
             clearInterval(time);
             continues.css({'display':'block'});
             start.css({'display':'none'});
-        })
-        continues.tap(function(){
+        });
+        touch.on(continues, 'tap', function(ev){
             continues.css({'display':'none'});
             start.css({'display':'block'});
             time = setInterval(move,x);
@@ -60,9 +68,8 @@ $(function(){
         $('#'+x+'_'+y).css({background:'#00c853'});
         return {x:x,y:y};
     }
-    var fangxiang = 39;
     var food = dropFood();
-    var move = function(){
+    function move(){
         var oldTou = snake[snake.length-1];
         if(fangxiang == 39){
             var newTou = {x:oldTou.x,y:oldTou.y+1};
