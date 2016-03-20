@@ -32,6 +32,7 @@ $(function(){
         touch.on(start, 'tap', function(ev){
             aa();
         });
+        ceng.css({display:'none'});
         touch.on(stop, 'tap', function(ev){
             clearInterval(time);
             continues.css({'display':'block'});
