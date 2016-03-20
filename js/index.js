@@ -112,7 +112,7 @@ $(function(){
 
     $(document).keydown(function(e){
         if( Math.abs(fangxiang - e.keyCode) == 2 ){
-            fangxiang = e.keyCode;
+            return;
         }
         if( !(e.keyCode >= 37 && e.keyCode <= 40) ){
             return;
