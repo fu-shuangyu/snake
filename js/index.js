@@ -11,7 +11,7 @@ $(function(){
     console.log(cw)
     var fangxiang = 39;
     if(cw<=768){
-        ceng.style.display = 'none';
+        // ceng.style.display = 'none';
         touch.on(document, 'touchstart', function(ev){
             ev.preventDefault();
         });
