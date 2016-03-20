@@ -1,16 +1,4 @@
-#sence{
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    border: 1px solid black;
-    position: relative;
-}
-.block{
-    width: 30px;
-    height: 30px;
-    background: #1b5e20;
-    float: left;
-}
+
 .button{
     width: 140px;
     line-height: 38px;
@@ -66,4 +54,209 @@
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
     border-bottom:1px solid #333;
+}
+@media (min-width:990px){
+    #sence{
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 30px;
+        height: 30px;
+        background: #1b5e20;
+        float: left;
+    }
+    .button#start,.button#continue,.button#stop,select#ceng{
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        margin-left: -70px;
+        width: 140px;
+    }
+    .button{
+        width: 140px;
+    }
+    .button#start{
+        top: 50%;
+    }
+    .button#continue,.button#stop{
+        top: 65%;
+    }
+    select#ceng{
+        top: 80%;
+        width: 140px;
+        padding-left: 40px;
+        margin-left: -70px;
+    }
+}
+@media (min-width:675px){
+    #sence{
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 30px;
+        height: 30px;
+        background: #1b5e20;
+        float: left;
+    }
+    #continue,#start,#stop,#ceng{
+        position: absolute;
+        top: 630px;
+        margin-left: -70px;
+    }
+    .button{
+        width: 100px;
+    }
+    #start{
+        left: 20%;
+    }
+    #continue,#stop{
+        left: 50%;
+    }
+    #ceng{
+        left: 80%;
+        width: 100px;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width:675px){
+    #sence{
+        width: 600px;
+        height: 600px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 30px;
+        height: 30px;
+        background: #1b5e20;
+        float: left;
+    }
+     #continue,#start,#stop,#ceng{
+        position: absolute;
+        top: 630px;
+        margin-left: -70px;
+    }
+    .button{
+        width: 100px;
+    }
+    #start{
+        left: 30%;
+    }
+    #continue,#stop{
+        left: 60%;
+    }
+    #ceng{
+        left: 90%;
+        width: 100px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:450px){
+    #sence{
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 20px;
+        height: 20px;
+        background: #1b5e20;
+        float: left;
+    }
+    .button{
+        width: 100px;
+    }
+     #continue,#start,#stop,#ceng{
+        position: absolute;
+        top: 430px;
+    }
+    #start{
+        left: 30%;
+    }
+    #continue,#stop{
+        left: 60%;
+    }
+    #ceng{
+        left: 90%;
+        width: 100px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:375px){
+    #sence{
+        width: 340px;
+        height: 340px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 17px;
+        height: 17px;
+        background: #1b5e20;
+        float: left;
+    }
+     #continue,#start,#stop,#ceng{
+        position: absolute;
+        top: 370px;
+    }
+    .button{
+        width: 80px;
+    }
+    #start{
+        left: 30%;
+    }
+    #continue,#stop{
+        left: 60%;
+    }
+    #ceng{
+        left: 90%;
+        width: 100px;
+        padding-left: 20px;
+    }
+}
+@media (max-width:320px){
+    #sence{
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        border: 1px solid black;
+        position: relative;
+    }
+    .block{
+        width: 15px;
+        height: 15px;
+        background: #1b5e20;
+        float: left;
+    }
+     #continue,#start,#stop,#ceng{
+        position: absolute;
+        top: 330px;
+    }
+    .button{
+        width: 70px;
+    }
+    #start{
+        left: 30%;
+    }
+    #continue,#stop{
+        left: 55%;
+    }
+    #ceng{
+        left: 80%;
+        width: 100px;
+        padding-left: 20px;
+    }
 }

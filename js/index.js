@@ -1,4 +1,40 @@
 $(function(){
+    var start = $('#start');
+    var continues = $('#continue');
+    var stop = $('#stop');
+    var ceng = $('#ceng');
+    var time;
+    var x;
+    var snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}];
+    var data = {'0_0':true,'0_1':true,'0_2':true};
+    var cw = $(window).width();
+    if(cw<=450){
+        $(document).swipeLeft(function(){
+            fangxiang = 37;
+        })
+        $(document).swipeRight(function(){
+            fangxiang = 39;
+        })
+        $(document).swipeTop(function(){
+            fangxiang = 38;
+        })
+        $(document).swipeBottom(function(){
+            fangxiang = 40;
+        })
+        start.tap(function(){
+            aa();
+        });
+        stop.tap(function(){
+            clearInterval(time);
+            continues.css({'display':'block'});
+            start.css({'display':'none'});
+        })
+        continues.tap(function(){
+            continues.css({'display':'none'});
+            start.css({'display':'block'});
+            time = setInterval(move,x);
+        });
+    }
     var s = '';
     for (var i = 0; i < 20; i++) {
         for (var j = 0; j < 20; j++) {
@@ -7,17 +43,13 @@ $(function(){
         }
     }
     $('#sence').html(s);
-    var time;
-    var x;
-    var snake = [{x:0,y:0},{x:0,y:1},{x:0,y:2}];
-    var data = {'0_0':true,'0_1':true,'0_2':true};
+
     var huashe = function(){
         $.each(snake,function(index,value){
             $('#'+value.x+'_'+value.y).css({background:'#c2185b'});
         })
     }
     huashe();
-
     var dropFood = function(){
         var x = Math.floor(Math.random()*20);
         var y = Math.floor(Math.random()*20);
@@ -80,11 +112,7 @@ $(function(){
         fangxiang = e.keyCode;
     })
 
-var start = $('#start');
-var continues = $('#continue');
-var stop = $('#stop');
-var ceng = $('#ceng');
-start.click(function(){
+function aa() {
     if(snake.length < 50 || ceng.val() == '一级' ){
         x = 250;
         time = setInterval(move,x);
@@ -109,6 +137,9 @@ start.click(function(){
         x = 80;
         time = setInterval(move,x);
     }
+}
+start.click(function(){
+    aa();
 });
 stop.click(function(){
     clearInterval(time);
